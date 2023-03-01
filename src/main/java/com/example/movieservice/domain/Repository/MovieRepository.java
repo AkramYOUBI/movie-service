@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Long> {
 
-    @Query("select m from Movie m where m.genre like %?1%")
+    @Query("select m from Movie m where m.genre like %?1% order by m.releaseYear DESC")
     List<Movie> findByPreferences(String preferences);
 }
